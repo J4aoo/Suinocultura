@@ -2,9 +2,8 @@
 # O APK fica para baixar em: aba "Releases" do repositório (e também em "Actions" → execução → Artifacts).
 name: Gerar APK Android
 
+# Só roda quando você pedir: GitHub → Actions → "Gerar APK Android" → Run workflow.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

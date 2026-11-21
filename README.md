@@ -5,6 +5,23 @@ lotes em engorda, manejo sanitário, plantel reprodutivo, custos, financeiro e e
 com indicadores zootécnicos calculados automaticamente.
 
 
+
+## 🌐 Publicar na Vercel (site instalável)
+
+1. Em vercel.com → **Add New… → Project** → importe o repositório `J4aoo/Suinocultura`.
+2. Não precisa mudar nada: o `vercel.json` já diz para publicar a pasta `www/` (sem build).
+3. Clique em **Deploy**. Cada envio para a branch `main` atualiza o site sozinho.
+
+**Instalar no Android:** abra o endereço da Vercel no Chrome → ⋮ → **Instalar aplicativo** → **Instalar**.
+
+**Onde ficam os dados:** no próprio celular, no armazenamento do navegador. Eles continuam
+salvos depois de fechar o site ou reiniciar o celular. O site pede ao Chrome armazenamento
+"permanente", para não ser apagado quando falta espaço. Os dados só se perdem se você
+**limpar os dados do Chrome/site**, desinstalar o app ou trocar de celular. Por isso,
+use **Ajustes → Exportar backup** de vez em quando.
+
+---
+
 ## 📱 App Android (APK) — como funciona este repositório
 
 - O app web fica em `www/` e é empacotado como app Android com **Capacitor 7**.
@@ -12,8 +29,8 @@ com indicadores zootécnicos calculados automaticamente.
   Cada celular tem os próprios dados; use **Ajustes → Backup** toda semana e envie o
   arquivo para o WhatsApp, Drive ou e-mail.
 - Exportar CSV/backup abre o "Compartilhar" do Android (`@capacitor/filesystem` + `@capacitor/share`).
-- A cada envio para a branch `main`, o GitHub Actions (`.github/workflows/android.yml`)
-  gera o APK assinado e publica na aba **Releases**.
+- O APK é gerado **só quando você pedir**: GitHub → Actions → "Gerar APK Android" → Run workflow.
+  Ele é assinado e publicado na aba **Releases**.
 - Funciona em Android 6.0 ou mais novo.
 
 ### Configuração única: chave de assinatura

@@ -105,6 +105,22 @@ const API = (function () {
     return !!(C && C.isNativePlatform && C.isNativePlatform() && C.Plugins && C.Plugins.CapacitorSQLite);
   }
 
+  /**
+   * Pede ao navegador para tratar os dados deste site como permanentes:
+   * assim o Android/Chrome não apaga o armazenamento quando falta espaço.
+   * (Os dados já ficam salvos ao fechar o site; isto protege contra limpeza automática.)
+   */
+  let persistente = null;
+  function pedirArmazenamentoPermanente() {
+    try {
+      if (!navigator.storage || !navigator.storage.persist) return;
+      navigator.storage.persisted()
+        .then(ja => ja ? true : navigator.storage.persist())
+        .then(ok => { persistente = !!ok; })
+        .catch(() => {});
+    } catch (_) { /* navegador sem suporte */ }
+  }
+
   let store = null;
   let storeReady = null;
   function getStore() {
@@ -116,6 +132,7 @@ const API = (function () {
         }
         await LocalStore.init();
         store = LocalStore;
+        pedirArmazenamentoPermanente();
         return store;
       })();
     }
@@ -244,6 +261,7 @@ const API = (function () {
 
   return {
     TABLES, state, loadAll, reload, create, update, remove, save, deleteRow, byId, on,
-    get armazenamento() { return store ? store.nome : null; }
+    get armazenamento() { return store ? store.nome : null; },
+    get persistente() { return persistente; }
   };
 })();
