@@ -1,0 +1,28 @@
+{
+  "id": "./",
+  "name": "Granja Suína — Gestão",
+  "short_name": "Granja",
+  "description": "Controle de lotes, manejo, matrizes, partos, financeiro e estoque da granja de suínos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#f4f7f5",
+  "theme_color": "#0f3d2b",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["productivity", "business", "utilities"],
+  "icons": [
+    { "src": "icons/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Novo manejo", "short_name": "Manejo", "url": "./index.html#/manejo", "icons": [{ "src": "icons/app-icon-192.png", "sizes": "192x192" }] },
+    { "name": "Lotes", "short_name": "Lotes", "url": "./index.html#/lotes", "icons": [{ "src": "icons/app-icon-192.png", "sizes": "192x192" }] },
+    { "name": "Financeiro", "short_name": "Financeiro", "url": "./index.html#/financeiro", "icons": [{ "src": "icons/app-icon-192.png", "sizes": "192x192" }] }
+  ]
+}

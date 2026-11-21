@@ -1,0 +1,13 @@
+{
+  "appId": "br.granjasuina.gestao",
+  "appName": "Granja Suína",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "CapacitorSQLite": {
+      "androidIsEncryption": false
+    }
+  }
+}
